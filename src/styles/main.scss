@@ -1,0 +1,32 @@
+:root {
+  --main-color: #334;
+  --main-color-opc4: #3344;
+  --main-color-opc8: #3348;
+  --accent-color: royalblue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hubballi", cursive;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  position: relative;
+  width: min(90%, 80em);
+  margin-inline: auto;
+}
+
+.page-title {
+  font-family: "Open Sans";
+  font-size: 3rem;
+}

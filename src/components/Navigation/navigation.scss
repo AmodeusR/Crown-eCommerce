@@ -1,0 +1,58 @@
+@use "/src/styles/mixins" as mix;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  // background-color: white;
+  
+
+  &__logo {
+    transition: transform 250ms ease-out;
+    margin-block: 1rem;    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  
+  &__list {
+    margin-inline: auto 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+
+    &-item {
+      position: relative; 
+    }
+    
+    &-link {
+      text-decoration: none;
+      color: var(--main-color);
+      padding: .4rem;
+      
+      @include mix.underline-hover;
+
+    }
+  }
+
+  @media (max-width: 45em) {
+    .navbar {
+
+      &__list {
+        display: none;
+      }
+    }
+    
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 1.5px solid var(--main-color-opc4); 
+}

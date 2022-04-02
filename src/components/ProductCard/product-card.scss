@@ -1,0 +1,49 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 23rem;
+  margin: 0 auto;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &__image {
+    max-width: 100%;
+    width: 18rem;
+    height: 23rem;
+    object-fit: cover;
+    transition: opacity 200ms ease;
+  }
+
+  &__description {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    width: 95%;
+    margin-inline: auto;
+  }
+
+  &__button {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    bottom: 4rem;
+
+    pointer-events: none;
+    transition: opacity 200ms ease, background-color 250ms ease,
+      color 250ms ease;
+    opacity: 0;
+  }
+
+  &:hover {
+    .product-card {
+      &__button {
+        opacity: 1;
+        pointer-events: initial;
+      }
+      &__image {
+        opacity: .9;
+      }
+    }
+  }
+}

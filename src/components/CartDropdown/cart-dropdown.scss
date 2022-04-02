@@ -1,0 +1,44 @@
+@use "/src/styles/mixins" as mix;
+
+.cart-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  
+  position: absolute;
+  width: 18rem;
+  min-height: 18rem;
+  padding: 1rem;
+  border: 2px solid var(--main-color);
+  background: white;
+  right: 0rem;
+  top: 4rem;
+  
+  z-index: 5;
+  
+  &__menu {
+
+    overflow-y: scroll;
+    height: 16em;
+
+    @include mix.styled-scrollbar;
+  }
+
+}
+
+.menu__empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.item {
+  width: 100%;
+  height: 5rem;
+  flex-shrink: 0;
+}

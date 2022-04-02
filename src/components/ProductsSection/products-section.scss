@@ -1,0 +1,47 @@
+@use "/src/styles/mixins" as mix;
+
+.products-section {
+  display: flex;
+  flex-direction: column;
+
+  &__header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin-block: 3rem 3rem;
+    font-size: 3rem;
+  }
+
+  &__return {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-decoration: none;
+    position: relative;
+    padding: .1rem;
+
+    @include mix.underline-hover;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    row-gap: 3rem;
+    column-gap: 1.5rem;
+  }
+
+  &__expand {
+    align-self: flex-end;
+    margin-top: 2rem;
+    position: relative;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    
+    @include mix.underline-hover;
+  }
+
+  margin-bottom: 2rem;
+}

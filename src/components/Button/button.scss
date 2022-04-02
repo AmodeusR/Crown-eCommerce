@@ -1,0 +1,42 @@
+.button {
+  --first-btn-color: var(--main-color);
+  --second-btn-color: white;
+  padding: 1rem;
+  width: 100%;
+
+  border: none;
+  background: var(--first-btn-color);
+  color: var(--second-btn-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: 2px solid var(--first-btn-color);
+  outline-offset: -2px;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background: transparent;
+    color: var(--first-btn-color);
+  }
+
+  &.inverted {
+    color: var(--first-btn-color);
+    background: var(--second-btn-color);
+    
+    &:hover {
+      color: var(--second-btn-color);
+      background: var(--first-btn-color);
+    }
+  }
+
+  &.disabled {
+    --first-btn-color: hsl(240, 5%, 33%);
+    pointer-events: none;
+    background: var(--first-btn-color);
+    outline-color: var(--first-btn-color);
+    color: #eee;
+  }
+}

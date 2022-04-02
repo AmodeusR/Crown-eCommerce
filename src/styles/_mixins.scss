@@ -1,0 +1,35 @@
+@mixin styled-scrollbar {
+
+  &::-webkit-scrollbar {
+    width: .5em;
+    right: 1rem;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    position: absolute;
+    background-color: var(--main-color-opc4);
+    border-radius: 1rem;
+  }
+}
+
+@mixin underline-hover {
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: .1rem;
+    left: 0;
+    right: 0;
+    top: 93%;
+    bottom: 0;
+    
+    background: var(--main-color);
+    transition: transform .4s ease;
+    transform: scaleX(0);
+    transform-origin: top right;
+  }
+  
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: top left;
+  }
+}

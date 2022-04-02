@@ -1,0 +1,47 @@
+.sections {
+  display: flex;
+  justify-content: space-around;
+  color: var(--main-color);
+  align-items: flex-start;
+  margin-block: 4rem;
+  gap: 3rem;
+  width: 100%;
+  
+  section {
+    flex-grow: 1;
+    max-width: 25rem;
+  }
+
+  [class*=title] {
+    font-family: "Open Sans";
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 0;
+  }
+  
+  [class*=form] {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (max-width: 60em) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.auth {
+
+  &__subtext {
+    font-family: "Open Sans", sans-serif;
+    display: block;
+    font-size: 1rem;
+    margin-block: .4rem 1rem;
+  }
+}
+
+.signin,
+.signup {
+  width: 100%;
+}

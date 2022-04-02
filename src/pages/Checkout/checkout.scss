@@ -1,0 +1,55 @@
+@use "/src/styles/mixins" as mix;
+
+.checkout-body {
+  margin-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-section {
+  width: 100%;
+  max-width: 60rem;
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 40rem;
+    overflow-y: scroll;
+    padding: 1rem;
+    
+    border-bottom: 2px solid var(--main-color);
+    border-top: 2px solid var(--main-color);
+
+    @include mix.styled-scrollbar;
+
+  }
+
+  &__confirmation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-inline: 4rem;
+    margin-top: 2rem;
+  }
+
+  &__button {
+    max-width: 20rem;
+    padding: 1.5rem .5rem;
+  }
+
+  &__total-price {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 40em) {
+    &__confirmation {
+      flex-direction: column-reverse;
+      gap: 2rem;
+      margin-inline: 2rem;
+    }
+
+  }
+}

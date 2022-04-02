@@ -1,0 +1,11 @@
+.page-not-found {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  min-height: 70vh;
+
+ &__button {
+   max-width: 15rem;
+ }
+}

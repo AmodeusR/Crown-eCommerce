@@ -1,0 +1,58 @@
+.inputlabel {
+  display: flex;
+  flex-direction: column;
+  
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+
+  --border-width: 2px;
+  .underline {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    border-bottom: var(--border-width) solid var(--main-color);
+    pointer-events: none;
+    transition: width 450ms ease-in-out;
+  }
+
+  input {
+    padding: .7rem .5rem 0.3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: var(--border-width) solid var(--main-color-opc8);
+    transition: 
+    border-color 250ms ease,
+    background-color 250ms ease;
+
+    &:focus {
+      outline: none;
+      background: #3342;
+
+      ~ .underline {
+        width: 100%;
+      }
+
+      + label {
+        transform: translateY(-160%) translateX(-10%);
+        font-size: .8rem;
+      }
+    }
+  }
+
+  label {
+    font-weight: 600;
+    position: absolute;
+    color: var(--main-color-opc8);
+    top: 25%;
+    left: 8px;
+    pointer-events: none;
+    transition: 
+      transform 250ms ease,
+      font-size 250ms ease;
+      
+    &.shrink {
+      transform: translateY(-160%) translateX(-10%);
+      font-size: .8rem;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.cart-icon {
+  display: block;
+  width: 1.5rem;
+  margin-left: -.2rem;
+  position: relative;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+
+  &__count {
+    font-family: "Open Sans", sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    position: absolute;
+    top: 22%;
+    left: 34%;
+    user-select: none;
+  }
+}

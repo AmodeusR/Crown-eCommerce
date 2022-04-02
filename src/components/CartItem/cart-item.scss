@@ -1,0 +1,33 @@
+.item {
+  display: flex;
+  gap: .5rem;
+  padding: 0.4rem;
+
+  font-family: "Open Sans", sans-serif;
+
+  &__img {
+    width: 3.5rem;
+    height: 100%;
+    background-color: aquamarine;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-block: .3rem;
+
+    > * {
+      margin: 0;
+    }
+  }
+  
+  &__title {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  
+  &__description {
+    font-size: 1rem;
+  }
+}
