@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 <h1 align="center">Crown eCommerce</h1>
 
-<img src="./page-models/preview.png" alt="preview image for the project" />
+<img src="./public/page-models/preview.png" alt="preview image for the project" />
 
 <p align="center">eCommerce Project from <a href="https://zerotomastery.io/courses/learn-react/">Zero to Mastery's Academy React Course.</a></p>
 
