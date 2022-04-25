@@ -34,7 +34,7 @@ This have been my greatest project till this moment, and I've learn plenty of th
 
 ### Links
 
-- Live Site URL: [Github Pages](https://crown-ecommerce.pages.dev/)
+- Live Site URL: [Cloudfare Pages](https://crown-ecommerce.pages.dev/)
 
 ## My process
 
