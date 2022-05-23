@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { ReactComponent as Delete } from "../../assets/close.svg";
 
-import "./checkout-card.scss";
 import currencyFormatter from "../../utils/currencyFormatter";
-import CartContext from "../../contexts/cart.context";
+import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
+import { createAction } from "../../utils/reducer/reducer";
+import "./checkout-card.scss";
 
 const CheckoutCard = ({ id, name, imageUrl, price, quantity }) => {
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { cartItems, cartDispatch } = useContext(CartContext);
   const formattedPrice = currencyFormatter.format(price * quantity);
 
   const handleQuantityChange = (e) => {
@@ -25,13 +26,13 @@ const CheckoutCard = ({ id, name, imageUrl, price, quantity }) => {
       return [...acc, item];
     }, []);
     
-    setCartItems(updatedCartItems);
+    cartDispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, updatedCartItems));
   }
 
   const handleDeletion = (id) => {
     const newCartItems = cartItems.filter(item => item.id !== id);
 
-    setCartItems(newCartItems);
+    cartDispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, newCartItems));
   }
 
   return (
