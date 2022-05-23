@@ -32,6 +32,10 @@
       text-decoration: none;
       color: var(--main-color);
       padding: .4rem;
+
+      &:hover {
+        cursor: pointer;
+      }
       
       @include mix.underline-hover;
 
