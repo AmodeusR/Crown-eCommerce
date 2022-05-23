@@ -4,14 +4,15 @@ import { userSignOut } from "../../utils/firebase/firebase";
 import { CartIcon, CartDropdown } from "/src/components";
 
 import UserContext from "../../contexts/user.context";
-import CartContext from "../../contexts/cart.context";
+import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
 
 import { ReactComponent as Logo } from "/src/assets/crown.svg";
 import "./navigation.scss";
+import { createAction } from "../../utils/reducer/reducer";
 
 const Navigation = () => {
   const { user } = useContext(UserContext);
-  const { setIsCartOpen } = useContext(CartContext);
+  const { cartDispatch } = useContext(CartContext);
 
   const handleSignOut = async () => {
     await userSignOut();
@@ -51,9 +52,9 @@ const Navigation = () => {
             </li>
           </ul>
           <div
-            tabIndex="23"
+            tabIndex="0"
             className="cart-container"
-            onBlur={() => setIsCartOpen(false)}
+            onBlur={() => cartDispatch(createAction(CART_ACTIONS.SET_IS_CART_OPEN, false))}
           >
             <CartIcon />
             <CartDropdown />
