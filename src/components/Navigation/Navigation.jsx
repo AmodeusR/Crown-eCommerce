@@ -9,9 +9,11 @@ import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
 import { ReactComponent as Logo } from "/src/assets/crown.svg";
 import "./navigation.scss";
 import { createAction } from "../../utils/reducer/reducer";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 const Navigation = () => {
-  const { user } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
   const { cartDispatch } = useContext(CartContext);
 
   const handleSignOut = async () => {
@@ -40,7 +42,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li className="navbar__list-item">
-              {user ? (
+              {currentUser ? (
                 <span className="navbar__list-link" onClick={handleSignOut}>
                   Sign Out
                 </span>

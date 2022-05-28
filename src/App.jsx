@@ -1,9 +1,27 @@
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { Home, Authentication, Shop, Checkout, PageNotFound } from "./pages";
 import { Navigation } from "./components";
-import { Routes, Route } from "react-router-dom";
 import { CategoryProvider } from "./contexts/category.context";
+import { onAuthStateChangedListener, createUserDoc } from "./utils/firebase/firebase";
+import { setCurrentUser } from "./store/user/user.action";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+    dispatch(setCurrentUser(user));
+    
+    if (user) {   
+     createUserDoc(user);
+    }
+  });
+
+    return unsubscribe;
+  }, []);
 
   return (
     <>
