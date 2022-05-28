@@ -26,8 +26,6 @@ const cartReducer = (state, action) => {
     ...newValue
   };
 
-  console.log({ payload, newValue, newState });
-
   return newState;
 }
 

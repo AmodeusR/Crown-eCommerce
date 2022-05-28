@@ -8,8 +8,6 @@ import "./cart-icon.scss";
 const CartIcon = () => {
   const { isCartOpen, cartDispatch, cartItems } = useContext(CartContext);
 
-  console.log(cartItems);
-
   const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
