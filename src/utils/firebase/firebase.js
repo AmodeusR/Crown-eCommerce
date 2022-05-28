@@ -60,7 +60,7 @@ export const createUserDoc = async (userAuthData) => {
         createdAt,
       });
     } catch (error) {
-      console.log(error.message);
+      console.error(error.message);
     }
   }
 
@@ -90,7 +90,6 @@ export const onAuthStateChangedListener = async (callback) => {
 
 export const addCollectionAndDocuments = async (collectionKey, dataToAdd) => {
   const collectionRef = collection(db, collectionKey);
-  console.log("started");
 
   const batch = writeBatch(db);
 
@@ -100,8 +99,6 @@ export const addCollectionAndDocuments = async (collectionKey, dataToAdd) => {
   });
 
   await batch.commit();
-
-  console.log("done");
 }
 
 export const fetchData = async () => {
