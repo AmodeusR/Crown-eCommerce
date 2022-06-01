@@ -1,12 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PageNotFound } from "../../pages";
 import { ProductsSection, LoadingAnimation } from "../../components";
-import CategoryContext from "../../contexts/category.context";
+import { useSelector } from "react-redux";
+import { selectCategories, selectIsFetching } from "../../store/categories/categories.selector";
 
 
 const CategorySection = () => {
-  const { categories, isFetching } = useContext(CategoryContext);
+  const categories = useSelector(selectCategories);
+  const isFetching = useSelector(selectIsFetching);
   const { category } = useParams();
   const categoryName = category.slice(0, 1).toUpperCase() + category.slice(1);
 
@@ -17,8 +19,6 @@ const CategorySection = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-
 
   return (
     <>

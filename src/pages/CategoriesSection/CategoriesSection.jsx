@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import CategoryContext from "../../contexts/category.context";
 import { ProductsSection, LoadingAnimation } from "../../components";
 
-const CategoriesSection = () => {
-  const { categories, isFetching } = useContext(CategoryContext);
-  const sections = Object.keys(categories);
+const CategoriesSection = ({ categories, sections, isFetching }) => {
 
   return (
     <>
