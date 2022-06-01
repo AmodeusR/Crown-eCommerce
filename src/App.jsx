@@ -4,8 +4,10 @@ import { useDispatch } from "react-redux";
 
 import { Home, Authentication, Shop, Checkout, PageNotFound } from "./pages";
 import { Navigation } from "./components";
-import { CategoryProvider } from "./contexts/category.context";
-import { onAuthStateChangedListener, createUserDoc } from "./utils/firebase/firebase";
+import {
+  onAuthStateChangedListener,
+  createUserDoc,
+} from "./utils/firebase/firebase";
 import { setCurrentUser } from "./store/user/user.action";
 
 const App = () => {
@@ -13,12 +15,12 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
-    dispatch(setCurrentUser(user));
-    
-    if (user) {   
-     createUserDoc(user);
-    }
-  });
+      dispatch(setCurrentUser(user));
+
+      if (user) {
+        createUserDoc(user);
+      }
+    });
 
     return unsubscribe;
   }, []);
@@ -29,21 +31,14 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="auth" element={<Authentication />} />
-          <Route
-            path="shop/*"
-            element={
-              <CategoryProvider>
-                <Shop />
-              </CategoryProvider>
-            }
-          />
+          <Route path="shop/*" element={<Shop />} />
           <Route path="checkout" element={<Checkout />} />
 
-          <Route path="*" element={<PageNotFound /> } />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </>
   );
-}
+};
 
 export default App;
