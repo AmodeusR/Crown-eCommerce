@@ -3,11 +3,10 @@ import { Outlet, Link } from "react-router-dom";
 import { userSignOut } from "../../utils/firebase/firebase";
 import { CartIcon, CartDropdown } from "/src/components";
 
-import UserContext from "../../contexts/user.context";
 import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
 
-import { ReactComponent as Logo } from "/src/assets/crown.svg";
 import "./navigation.scss";
+import { ReactComponent as Logo } from "/src/assets/crown.svg";
 import { createAction } from "../../utils/reducer/reducer";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/user.selector";
@@ -15,7 +14,6 @@ import { selectCurrentUser } from "../../store/user/user.selector";
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
   const { cartDispatch } = useContext(CartContext);
-
   const handleSignOut = async () => {
     await userSignOut();
   };
