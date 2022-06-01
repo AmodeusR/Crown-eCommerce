@@ -14,10 +14,8 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     const updatedValue = actions[type];
     const newState = { ...state, ...updatedValue };
     
-    console.log("%c Working", "color: forestgreen")
     return newState;
   }
-  console.log("%c Not working", "color: crimson")
   
   return state;
 }
