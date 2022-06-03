@@ -2,12 +2,16 @@ import { useContext } from "react";
 import { ReactComponent as Delete } from "../../assets/close.svg";
 
 import currencyFormatter from "../../utils/currencyFormatter";
-import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
 import { createAction } from "../../utils/reducer/reducer";
 import "./checkout-card.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCartItems } from "../../store/cart/cart.selector";
+import { CART_ACTIONS } from "../../store/cart/cart.types";
 
 const CheckoutCard = ({ id, name, imageUrl, price, quantity }) => {
-  const { cartItems, cartDispatch } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+
   const formattedPrice = currencyFormatter.format(price * quantity);
 
   const handleQuantityChange = (e) => {
@@ -26,13 +30,13 @@ const CheckoutCard = ({ id, name, imageUrl, price, quantity }) => {
       return [...acc, item];
     }, []);
     
-    cartDispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, updatedCartItems));
+    dispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, updatedCartItems));
   }
 
   const handleDeletion = (id) => {
     const newCartItems = cartItems.filter(item => item.id !== id);
 
-    cartDispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, newCartItems));
+    dispatch(createAction(CART_ACTIONS.SET_CART_ITEMS, newCartItems));
   }
 
   return (

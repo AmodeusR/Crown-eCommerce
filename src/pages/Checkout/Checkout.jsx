@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import CartContext from "../../contexts/cart.context";
 import { CheckoutCard, Button } from "../../components";
 
 import "./checkout.scss";
 import currencyFormatter from "../../utils/currencyFormatter";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 const Checkout = () => {
-  const { cartItems } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 

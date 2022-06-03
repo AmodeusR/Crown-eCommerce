@@ -3,17 +3,17 @@ import { Outlet, Link } from "react-router-dom";
 import { userSignOut } from "../../utils/firebase/firebase";
 import { CartIcon, CartDropdown } from "/src/components";
 
-import CartContext, { CART_ACTIONS } from "../../contexts/cart.context";
-
 import "./navigation.scss";
 import { ReactComponent as Logo } from "/src/assets/crown.svg";
 import { createAction } from "../../utils/reducer/reducer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { CART_ACTIONS } from "../../store/cart/cart.types";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
-  const { cartDispatch } = useContext(CartContext);
+  
   const handleSignOut = async () => {
     await userSignOut();
   };
@@ -54,7 +54,7 @@ const Navigation = () => {
           <div
             tabIndex="0"
             className="cart-container"
-            onBlur={() => cartDispatch(createAction(CART_ACTIONS.SET_IS_CART_OPEN, false))}
+            onBlur={() => dispatch(createAction(CART_ACTIONS.SET_IS_CART_OPEN, false))}
           >
             <CartIcon />
             <CartDropdown />

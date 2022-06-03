@@ -6,18 +6,14 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { store } from "./store/store";
 
-import { CartProvider } from "./contexts/cart.context";
-
 import "./styles/main.scss";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <CartProvider>
-        <Router>
-          <App />
-        </Router>
-      </CartProvider>
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

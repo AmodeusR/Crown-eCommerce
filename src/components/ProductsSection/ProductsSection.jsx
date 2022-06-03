@@ -1,14 +1,18 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductCard } from "/src/components";
 
 import "./products-section.scss";
-import CartContext from "../../contexts/cart.context";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setNewCartItem } from "../../store/cart/cart.actions";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 
 const ProductsSection = ({ title, products, preview = false }) => {
-  const { addItemToCart } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
+  const addItemToCart = (itemToAdd) => {
+    dispatch(setNewCartItem(itemToAdd, cartItems));
+  }
 
   const productsToMap = preview ? products.filter((_, i) => i < 4) : products;  
 
