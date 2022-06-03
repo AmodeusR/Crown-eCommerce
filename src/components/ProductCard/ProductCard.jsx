@@ -4,8 +4,6 @@ import currencyFormatter from "../../utils/currencyFormatter";
 
 import "./product-card.scss";
 
-
-
 const ProductCard = ({ product, handleItemAdditionToCart }) => {
   const { name, price, imageUrl: imgSrc } = product;
   const formattedPrice = currencyFormatter.format(price);

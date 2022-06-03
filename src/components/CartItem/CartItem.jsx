@@ -3,7 +3,6 @@ import currencyFormatter from "../../utils/currencyFormatter";
 import "./cart-item.scss";
 
 const CartItem = ({ title, price, quantity, imgSrc }) => {
-  const formattedPrice = currencyFormatter.format(price);
   const formattedTotalPrice = currencyFormatter.format(price * quantity);
 
   return (
