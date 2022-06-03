@@ -13,6 +13,7 @@ const Shop = () => {
   const categories = useSelector(selectCategories);
   const isFetching = useSelector(selectIsFetching);
   const sections = Object.keys(categories);
+  
   useEffect(() => {
     const fetchCategories = async () => {
       try {
