@@ -35,7 +35,7 @@ Este foi o meu maior projeto até o momento, tendo aprendido muitas coisas difer
 
 ### Links
 
-- URL para o Site: [Github Pages](https://crown-ecommerce.pages.dev/)
+- Demonstração: [Cloudfare Pages](https://using-contextapi.crown-ecommerce.pages.dev/)
 
 ## Meu processo
 
@@ -43,6 +43,7 @@ Este foi o meu maior projeto até o momento, tendo aprendido muitas coisas difer
 
 - React
 - React Router
+- Context API
 - Firebase
 - Sass
 - Vite
