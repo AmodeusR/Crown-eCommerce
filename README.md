@@ -34,7 +34,7 @@ This have been my greatest project till this moment, and I've learn plenty of th
 
 ### Links
 
-- Live Site URL: [Cloudfare Pages](https://crown-ecommerce.pages.dev/)
+- Live Project: [Cloudfare Pages](https://using-redux.crown-ecommerce.pages.dev/)
 
 ## My process
 
@@ -42,6 +42,7 @@ This have been my greatest project till this moment, and I've learn plenty of th
 
 - React
 - React Router
+- Redux
 - Firebase
 - Sass
 - Vite
