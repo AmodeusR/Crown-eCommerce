@@ -12,4 +12,6 @@ export const selectCategories = createSelector(
   (categories) => categories
 );
 
+export const selectFetchError = ({ categories }) => categories.fetchError;
+
 export const selectIsFetching = ({ categories }) => categories.isFetching;
