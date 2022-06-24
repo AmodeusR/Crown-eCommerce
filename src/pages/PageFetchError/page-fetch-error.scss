@@ -1,0 +1,19 @@
+.page-fetch-error {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  min-height: 70vh;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-block: 1rem 2rem;
+  }
+
+ &__button {
+   max-width: 15rem;
+ }
+}
