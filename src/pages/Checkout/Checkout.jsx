@@ -4,6 +4,7 @@ import "./checkout.scss";
 import currencyFormatter from "../../utils/currencyFormatter";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/cart/cart.selector";
+import PaymentForm from "../../components/PaymentForm/PaymentForm";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
@@ -34,6 +35,7 @@ const Checkout = () => {
             {FormattedtotalPrice}
           </span>
         </div>
+        <PaymentForm />
       </main>
     </div>
   );
