@@ -34,7 +34,9 @@ This have been my greatest project till this moment, and I've learn plenty of th
 
 ### Links
 
-- Live Site URL: [Cloudfare Pages](https://crown-ecommerce.pages.dev/)
+- Main Live Site: [Cloudfare Pages](https://crown-ecommerce.pages.dev/)
+- Alternative 1: [Using ContextAPI & useReducer](https://using-contextapi.crown-ecommerce.pages.dev/)
+- Alternative 2: [Using Redux](https://using-redux.crown-ecommerce.pages.dev/)
 
 ## My process
 
