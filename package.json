@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.10.0",
+    "@stripe/stripe-js": "^1.35.0",
     "animejs": "^3.2.1",
     "firebase": "^9.6.9",
     "react": "^17.0.2",
