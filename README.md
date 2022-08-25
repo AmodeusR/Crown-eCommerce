@@ -43,6 +43,7 @@ This have been my greatest project till this moment, and I've learn plenty of th
 - React
 - React Router
 - Context API
+- React useReducer
 - Firebase
 - Sass
 - Vite
