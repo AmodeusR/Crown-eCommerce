@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
 import { createAction } from "../../utils/reducer/reducer";
 import { CART_ACTIONS } from "./cart.types";
 
