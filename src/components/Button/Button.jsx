@@ -1,10 +1,14 @@
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import "./button.scss";
 
-const Button = ({ title, className, color, ...options }) => {
+const Button = ({ title, className, color, isLoading = false, ...options }) => {
   const style = { "--first-btn-color": color }
   return (
-    <button style={style} className={`button ${className || ""}`} {...options}>
-      {title}
+    <button style={style} disabled={isLoading} className={`button ${className || ""}`} {...options}>
+      {isLoading ?
+        <LoadingAnimation /> :
+        title  
+      }
     </button>
   );
 };
