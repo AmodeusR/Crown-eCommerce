@@ -37,7 +37,7 @@ const SignInForm = ({ title }) => {
   const handleSignInWithGoogle = async () => {
     try {
       await googleSignIn();
-
+        
       navigate("/");
     } catch (error) {
       console.warn(error);
