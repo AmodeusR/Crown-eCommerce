@@ -3,15 +3,14 @@ import { CheckoutCard, Button } from "../../components";
 import "./checkout.scss";
 import currencyFormatter from "../../utils/currencyFormatter";
 import { useSelector } from "react-redux";
-import { selectCartItems } from "../../store/cart/cart.selector";
+import { selectCartItems, selectCartTotal } from "../../store/cart/cart.selector";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-  const FormattedtotalPrice = currencyFormatter.format(totalPrice);
+  const FormattedtotalPrice = currencyFormatter.format(cartTotal);
 
   return (
     <div className="container checkout-body">
