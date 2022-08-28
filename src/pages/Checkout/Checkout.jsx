@@ -1,14 +1,16 @@
+import { useState } from "react";
 import { CheckoutCard, Button } from "../../components";
-
-import "./checkout.scss";
-import currencyFormatter from "../../utils/currencyFormatter";
 import { useSelector } from "react-redux";
 import { selectCartItems, selectCartTotal } from "../../store/cart/cart.selector";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
 
+import currencyFormatter from "../../utils/currencyFormatter";
+import "./checkout.scss";
+
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+  const [ isPaymentModalOpen, setisPaymentModalOpen ] = useState(false);
 
   const FormattedtotalPrice = currencyFormatter.format(cartTotal);
 
