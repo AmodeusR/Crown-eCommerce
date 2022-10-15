@@ -36,7 +36,7 @@ const Checkout = () => {
             {FormattedtotalPrice}
           </span>
         </div>
-        <PaymentForm />
+        {/* <PaymentForm /> */}
       </main>
     </div>
   );
